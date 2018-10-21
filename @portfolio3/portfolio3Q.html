@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@portfolio3Q</title>
+    <link rel="stylesheet" href="portfolio3Q.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        
+        <div id="midasi">
+        
+            <img src="Hacker%207-logo.png" alt="img1" height="160px">
+        
+            <h1>contactform</h1>
+            
+        </div>
+        
+    </header>
+    
+    <div id="menu">
+        
+        <ul>
+            <a href="portfolio3index.html"><li>ホーム</li></a>
+            <a href="portfolio3p1.html"><li>エリア紹介</li></a>
+            <a href="portfolio3p2.html"><li>観光スポット</li></a>
+            <a href="portfolio3p3.html"><li>宿泊</li></a>
+            <a href="portfolio3p4.html"><li>グルメ</li></a>
+        </ul>
+        
+    </div>
+    
+    <div id="form">
+        
+        <form action="php" method="post" name="myform">
+
+<table width="100%">
+
+<tbody><tr>
+
+    <td>名前（必須）</td>
+
+    <td><input type="text" name="name"></td>
+
+</tr>
+
+<tr>
+
+    <td>フリガナ（必須）</td>
+
+    <td><input type="text" name="furigana"></td>
+
+</tr>
+
+<tr>
+
+    <td>メールアドレス（必須）</td>
+
+    <td><input type="email" name="address"></td>
+
+</tr>
+
+<tr>
+
+    <td>電話番号（必須）</td>
+
+    <td><input type="number" name="tel"></td>
+
+</tr>
+
+<tr>
+
+    <td>お問い合わせ内容（必須）</td>
+
+    <td><textarea name="otoiawase"></textarea></td>
+
+</tr>
+
+</tbody></table>
+
+<input class="sousin" type="button" value="送信" onclick="check_contactform()">
+
+</form>
+
+            
+    </div>
+    
+    <div id="right">
+        
+        <h3>サイト制作者のtwitter<br>DMはこちらから<br>↓</h3>
+        <a href="https://twitter.com/ba_mkun"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://twitter.com/ba_mkun"><p>twitter</p></a>
+        
+        
+        <h3 class="line">LINEの追加はこちら<br>↓</h3>
+        <img src="http://qr-official.line.me/L/eZH85-eXIJ.png" alt="img1" height="110px">
+        <a class="lineLink" href="https://line.me/R/ti/p/%40mrv7413k"><img height="36" border="0" alt="友だち追加" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"></a>
+        
+    </div>
+    
+    <footer>
+        
+        <p>@portfolio<span>|</span>rodmartin diaz</p>
+        <a href="portfolio3Q.html">お問合わせ</a>
+        
+        
+    </footer>
+    
+    <script type="text/javascript">
+        
+        function check_contactform() {
+
+    var name = $('input[name="name"]').val();
+
+    var furigana = $('input[name="furigana"]').val();
+
+    var address = $('input[name="address"]').val();
+
+    var tel = $('input[name="tel"]').val();
+
+    var otoiawase = $('textarea[name="otoiawase"]').val();
+
+    var errmsg = "";
+
+    if(name == "") {
+
+        errmsg = "名前を入力して下さい\n";
+
+    }
+
+    if(furigana == "") {
+
+        errmsg = errmsg + "フリガナを入力して下さい\n";
+
+    }
+
+    if(address == "") {
+
+        errmsg = errmsg + "メールアドレスを入力して下さい\n";
+
+    }
+
+    if(!address.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)) {
+
+        errmsg = errmsg + "メールアドレスをご確認下さい\n";
+
+    }
+
+    if(tel == "") {
+
+        errmsg = errmsg + "電話番号を入力して下さい\n";
+
+    }
+
+    if(otoiawase == "") {
+
+        errmsg = errmsg + "お問い合わせ内容を入力して下さい\n";
+
+    }
+
+    if(errmsg != "") {
+
+        alert(errmsg);
+
+        return false;
+
+    }
+
+    $('form[name="myform"]').submit();
+
+}
+        
+    </script>
+</body>
+</html>
